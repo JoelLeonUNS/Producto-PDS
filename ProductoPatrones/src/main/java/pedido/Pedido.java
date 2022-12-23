@@ -1,13 +1,16 @@
 package pedido;
 
 import java.util.Scanner;
+import fabrica.Director;
 
 public abstract class Pedido {
-    
-    private String nombrePedido;
+
+    private final String nombrePedido;
     private String sedeExportacion;
-    private int numeroCajas;
-    private String tipoTransporte;
+    protected String tipoTransporte;
+    protected int numeroCajas;
+    
+    protected Director transporte;
     
     protected int opcionMenuSedeExportacion;
     protected int opcionMenuTipoTransporte;
@@ -20,9 +23,11 @@ public abstract class Pedido {
 
     public abstract void registrarSedeExportacion();
 
-    public abstract void registrarCantidadCajas();
-
     public abstract void registrarTipoTransporte();
+
+    public abstract void registrarCantidadCajas();
+    
+    public abstract void mostrarDetallesDeCaja();
 
     public void setSedeExportacion(String sedeExportacion) {
         this.sedeExportacion = sedeExportacion;
@@ -36,5 +41,13 @@ public abstract class Pedido {
         this.tipoTransporte = tipoTransporte;
     }
     
+    
+    @Override
+    public String toString() {
+        return "\nTipo: " + nombrePedido
+                + "\nSede: " + sedeExportacion
+                + "\nTransporte: " + tipoTransporte
+                + "\nNro. de Cajas: " + numeroCajas;
+    }
     
 }

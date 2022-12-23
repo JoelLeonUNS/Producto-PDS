@@ -1,12 +1,13 @@
-package cajaMango;
+package constructorCajaMango;
 
+import cajas.CajaMango;
 import java.util.HashMap;
 
 public abstract class CajaMangoConstructor {
 
     protected CajaMango cajaMango;
-    HashMap<Integer, String> mapNombreMarcaCajaMango = new HashMap<>();
-    HashMap<Integer, Integer> mapNumeroCalibreCajaMango = new HashMap<>();
+    protected HashMap<Integer, String> mapNombreMarcaCajaMango = new HashMap<>();
+    protected HashMap<Integer, Integer> mapNumeroCalibreCajaMango = new HashMap<>();
 
     public CajaMango getCajaMango() {
         return this.cajaMango;
@@ -25,8 +26,10 @@ public abstract class CajaMangoConstructor {
     public abstract void construirNumeroCalibre();
 
     public abstract void construirNumeroCajaPorPalet();
-    
+
+    public abstract void construirNumeroCajaPorContenedor();
+
     public abstract void putNombreMarcaInMap();
-    
+
     public abstract void putNumeroCalibreInMap();
 }

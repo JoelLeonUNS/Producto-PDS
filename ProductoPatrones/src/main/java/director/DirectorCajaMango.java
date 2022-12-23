@@ -1,10 +1,7 @@
 package director;
 
-public class DirectorCajaMango implements Director{
+import constructorCajaMango.CajaMangoConstructor;
 
-    @Override
-    public void construir() {
-        
-    }
-    
+public abstract class DirectorCajaMango {
+     public abstract void construir(CajaMangoConstructor cajaMangoConstructor);
 }

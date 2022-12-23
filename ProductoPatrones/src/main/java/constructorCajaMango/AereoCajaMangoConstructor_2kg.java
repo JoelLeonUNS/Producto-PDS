@@ -1,9 +1,15 @@
-package cajaMango;
+package constructorCajaMango;
 
-import extras.Retorna;
 
-public class CajaMango_4kg extends CajaMangoConstructor {
+import extras.Utilidades;
 
+public final class AereoCajaMangoConstructor_2kg extends AereoCajaMangoConstructor {
+    
+    public AereoCajaMangoConstructor_2kg() {
+        putNombreMarcaInMap();
+        putNumeroCalibreInMap();
+    }
+    
     @Override
     public void construirTipoMaterial() {
         this.cajaMango.setTipoMaterial("Cartón");
@@ -11,22 +17,22 @@ public class CajaMango_4kg extends CajaMangoConstructor {
 
     @Override
     public void construirPesoCaja() {
-        this.cajaMango.setPesoCaja(4);
+        this.cajaMango.setPesoCaja(2);
     }
 
     @Override
     public void construirNombreMarca() {
-        this.cajaMango.setNombreMarca(mapNombreMarcaCajaMango.get(Retorna.generarNumeroAleatorioConRango(1, 5)));
+        this.cajaMango.setNombreMarca(mapNombreMarcaCajaMango.get(Utilidades.generarNumeroAleatorioConRango(1, 5)));
     }
 
     @Override
     public void construirNumeroCalibre() {
-        this.cajaMango.setNumeroCalibre(mapNumeroCalibreCajaMango.get(Retorna.generarNumeroAleatorioConRango(1, 6)));
+        this.cajaMango.setNumeroCalibre(mapNumeroCalibreCajaMango.get(Utilidades.generarNumeroAleatorioConRango(1, 2)));
     }
 
     @Override
     public void construirNumeroCajaPorPalet() {
-        this.cajaMango.setNumeroCajaPorPalet(132);
+        this.cajaMango.setNumeroCajaPorPalet(192);
     }
 
     @Override
@@ -40,11 +46,8 @@ public class CajaMango_4kg extends CajaMangoConstructor {
 
     @Override
     public void putNumeroCalibreInMap() {
-        mapNumeroCalibreCajaMango.put(1, 7);
-        mapNumeroCalibreCajaMango.put(2, 8);
-        mapNumeroCalibreCajaMango.put(3, 9);
-        mapNumeroCalibreCajaMango.put(4, 10);
-        mapNumeroCalibreCajaMango.put(5, 11);
-        mapNumeroCalibreCajaMango.put(6, 12);
+        mapNumeroCalibreCajaMango.put(1, 5);
+        mapNumeroCalibreCajaMango.put(2, 6);
     }
+
 }

@@ -1,6 +1,6 @@
 package extras;
 
-public class Retorna {
+public class Utilidades {
 
     public static boolean validarRango(int limiteInferior, int limiteSuperior, int numeroIncluido) {
         boolean estado = numeroIncluido >= limiteInferior && numeroIncluido <= limiteSuperior;

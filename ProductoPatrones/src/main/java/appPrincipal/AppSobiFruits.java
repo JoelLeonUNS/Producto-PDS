@@ -11,6 +11,10 @@ public class AppSobiFruits {
         Cliente c1 = new Cliente();
         
         do {
+            
+        } while(!Utilidades.validarRango(1, 2, tipoProducto));
+        
+        do {
             System.out.println("\n== Bienvendido a la SobiFruits ==");
             System.out.println("¿Que tipo de producto desea adquirir?");
             System.out.println("1. Mangos");
@@ -32,7 +36,7 @@ public class AppSobiFruits {
             respuestaRetorno = input.nextInt();
 
         } while (!Utilidades.validarRango(1, 2, tipoProducto)|| respuestaRetorno != 0);
-
+        
         c1.mostrarDetallesDePedido();
         c1.getPedidoActual().mostrarDetallesDeCaja();
     }
