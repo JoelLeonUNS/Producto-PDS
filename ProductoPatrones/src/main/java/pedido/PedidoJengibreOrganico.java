@@ -92,8 +92,12 @@ public class PedidoJengibreOrganico extends Pedido {
         
     @Override
     public void mostrarDetallesDeCaja(){
-        for (CajaJengibreOrganico detalleCaja:cajaJengibreOrganico) {
-            System.out.println(detalleCaja.toString());
+        if (cajaJengibreOrganico.isEmpty()) {
+            System.out.println("No ha realizado ningún pedido de cajas.");
+        } else {
+            for (CajaJengibreOrganico detalleCaja:cajaJengibreOrganico) {
+                System.out.println(detalleCaja.toString());
+            }
         }
     }
     

@@ -120,8 +120,12 @@ public class PedidoMango extends Pedido {
     
     @Override
     public void mostrarDetallesDeCaja(){
-        for (CajaMango detalleCaja:cajaMango) {
-            System.out.println(detalleCaja.toString());
+        if (cajaMango.isEmpty()) {
+            System.out.println("No ha realizado ningún pedido de cajas.");
+        } else {
+            for (CajaMango detalleCaja:cajaMango) {
+                System.out.println(detalleCaja.toString());
+            }
         }
     }
 }

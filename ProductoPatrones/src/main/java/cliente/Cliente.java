@@ -7,16 +7,16 @@ import pedido.PedidoJengibreOrganico;
 import pedido.PedidoMango;
 
 public class Cliente {
-    
+
     protected List<Pedido> pedidos = new ArrayList<>();
     private String ID;
     private String nombre;
     private String apellido;
     private String correo;
-   
+
     public void crearPedido(String tipoPedido) {
         Pedido pedido;
-        
+
         switch (tipoPedido) {
             case "Mango" -> {
                 pedido = new PedidoMango("Pedido de Mangos");
@@ -28,16 +28,20 @@ public class Cliente {
         }
         pedidos.add(pedido);
     }
-    
+
     public Pedido getPedidoActual() {
         return pedidos.get(pedidos.size() - 1);
     }
-    
-    public void mostrarDetallesDePedido(){
-        for (Pedido detallePedido:pedidos) {
-            System.out.println(detallePedido.toString());
+
+    public void mostrarDetallesDePedido() {
+        if (pedidos.isEmpty()) {
+            System.out.println("No ha realizado ningún pedido.");
+        } else {
+            for (Pedido detallePedido : pedidos) {
+                System.out.println(detallePedido.toString());
+            }
         }
+
     }
-    
-    
+
 }
