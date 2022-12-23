@@ -2,6 +2,7 @@ package pedido;
 
 import cajas.CajaJengibreOrganico;
 import constructorCajaJengibreOrganico.CajaJengibreOrganicoConstructor;
+import constructorCajaJengibreOrganico.MaritimoCajaJengibreOrganicoConstructor_14kg;
 import constructorCajaJengibreOrganico.MaritimoCajaJengibreOrganicoConstructor_8kg;
 import director.DirectorCajaJengibreOrganico;
 import extras.Utilidades;
@@ -67,12 +68,15 @@ public class PedidoJengibreOrganico extends Pedido {
                 case 1 -> {
                     cajaJengibreOrganicoConstructor = new MaritimoCajaJengibreOrganicoConstructor_8kg();
                 }
+                case 2 -> {
+                    cajaJengibreOrganicoConstructor = new MaritimoCajaJengibreOrganicoConstructor_14kg();
+                }
             }
-            if (Utilidades.validarRango(1, 1, tipoCaja)) {
+            if (Utilidades.validarRango(1, 2, tipoCaja)) {
                 numeroCajas();
                 crearCajas();
             }  
-        } while (!Utilidades.validarRango(1, 1, tipoCaja));
+        } while (!Utilidades.validarRango(1, 2, tipoCaja));
     }
     
     // posible implementación de transporte aereo.

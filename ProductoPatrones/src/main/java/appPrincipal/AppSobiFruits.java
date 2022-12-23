@@ -8,7 +8,7 @@ public class AppSobiFruits {
 
     static Scanner input = new Scanner(System.in);
     static int tipoProducto, tipoAccion, respuestaRetorno;
-    static Cliente c1 = new Cliente();
+    static Cliente cliente = new Cliente();
 
     public static void main(String[] args) {
         do {
@@ -18,7 +18,7 @@ public class AppSobiFruits {
             System.out.println("3. Salir");
             System.out.print("Opcion: ");
             tipoAccion = input.nextInt();
-
+            
             switch (tipoAccion) {
                 case 1 -> {
                     realizarPedidos();
@@ -41,16 +41,16 @@ public class AppSobiFruits {
 
             switch (tipoProducto) {
                 case 1 -> {
-                    c1.crearPedido("Mango");
+                    cliente.crearPedido("Mango");
                 }
                 case 2 -> {
-                    c1.crearPedido("Jengibre");
+                    cliente.crearPedido("Jengibre");
                 }
             }
             
-            c1.getPedidoActual().registrarSedeExportacion();
-            c1.getPedidoActual().registrarTipoTransporte();
-            c1.getPedidoActual().registrarCantidadCajas();
+            cliente.getPedidoActual().registrarSedeExportacion();
+            cliente.getPedidoActual().registrarTipoTransporte();
+            cliente.getPedidoActual().registrarCantidadCajas();
             
             System.out.println("\nDesea adquirir otro producto? (Si:1, No:0)");
             System.out.print("Opción: ");
@@ -60,10 +60,10 @@ public class AppSobiFruits {
     
     public static void verPedidos() {
         System.out.println("\n---- Lista de Pedidos");
-        c1.mostrarDetallesDePedido();
+        cliente.mostrarDetallesDePedido();
         System.out.println("\n---- Lista de Cajas de su último pedido");
         try {
-            c1.getPedidoActual().mostrarDetallesDeCaja();
+            cliente.getPedidoActual().mostrarDetallesDeCaja();
         } catch (Exception e) {
             System.out.println("No ha realizado ningún pedido de cajas.");
         }
