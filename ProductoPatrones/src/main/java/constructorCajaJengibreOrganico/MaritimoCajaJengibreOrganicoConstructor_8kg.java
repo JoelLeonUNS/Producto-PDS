@@ -1,40 +1,21 @@
 package constructorCajaJengibreOrganico;
 
+import extras.DatosProductoJengibreOrganico;
 import extras.Utilidades;
+import flyweightCajaJengibreOrganico.FabricaAtributosBaseCajaJengibreOrganico;
 
 public final class MaritimoCajaJengibreOrganicoConstructor_8kg extends MaritimoCajaJengibreOrganicoConstructor {
-    
-    public MaritimoCajaJengibreOrganicoConstructor_8kg() {
-        putNombreMarcaInMap();
-    }
-    
-    @Override
-    public void construirTipoMaterial() {
-        this.cajaJengibreOrganico.setTipoMaterial("Plástico");
-    }
 
-    @Override
-    public void construirPesoCaja() {
-        this.cajaJengibreOrganico.setPesoCaja(8);
+    public MaritimoCajaJengibreOrganicoConstructor_8kg() {
     }
 
     @Override
     public void construirNombreMarca() {
-        this.cajaJengibreOrganico.setNombreMarca(mapNombreMarcaJengibreOrganico.get(Utilidades.generarNumeroAleatorioConRango(1, 1)));
+        this.cajaJengibreOrganico.setNombreMarca(DatosProductoJengibreOrganico.getMapNombreMarcaJengibreOrganicoMaritimo_8kg().get(Utilidades.generarNumeroAleatorioConRango(1, 1)));
     }
 
     @Override
-    public void construirNumeroCajaPorPalet() {
-        this.cajaJengibreOrganico.setNumeroCajaPorPalet(120);
-    }
-
-    @Override
-    public void construirNumeroCajaPorContenedor() {
-        this.cajaJengibreOrganico.setNumeroCajaPorContenedor(2400);
-    }
-
-    @Override
-    public void putNombreMarcaInMap() {
-        mapNombreMarcaJengibreOrganico.put(1, "Inkanto");
+    public void construirAtributosBaseCajaJengibreOrganico() {
+        this.cajaJengibreOrganico.setAtributosBaseCajaJengibreOrganico(FabricaAtributosBaseCajaJengibreOrganico.getAtributosBaseCajaJengibreOrganicoMaritimo(8, 120, 2400, "Plástico"));
     }
 }

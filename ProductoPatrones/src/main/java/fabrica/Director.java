@@ -6,7 +6,6 @@ import director.DirectorCajaMango;
 import director.DirectorMaritimoCajaJengibreOrganico;
 import director.DirectorMaritimoCajaMango;
 
-
 public class Director {
 
     public static DirectorCajaMango crearDirectorMango(String tipoDirector) {
@@ -21,9 +20,8 @@ public class Director {
                 return null;
             }
         }
-
     }
-    
+
     public static DirectorCajaJengibreOrganico crearDirectorJengibreOrganico(String tipoDirector) {
         switch (tipoDirector) {
             case "Marítimo" -> {
@@ -33,6 +31,5 @@ public class Director {
                 return null;
             }
         }
-
     }
 }

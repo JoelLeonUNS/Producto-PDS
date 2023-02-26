@@ -1,23 +1,14 @@
 package cajas;
 
+import flyweightCajaMango.AtributosBaseCajaMango;
+
 public class CajaMango {
 
-    private String tipoMaterial = null;
-    private double pesoCaja = 0;
     private String nombreMarca = null;
     private int numeroCalibre = 0;
-    private int numeroCajaPorPalet = 0;
-    private int numeroCajaPorContenedor = 0;
-    
+    private AtributosBaseCajaMango atributosBaseCajaMango = null;
+
     public CajaMango() {
-    }
-
-    public void setTipoMaterial(String tipoMaterial) {
-        this.tipoMaterial = tipoMaterial;
-    }
-
-    public void setPesoCaja(double pesoCaja) {
-        this.pesoCaja = pesoCaja;
     }
 
     public void setNombreMarca(String nombreMarca) {
@@ -28,22 +19,46 @@ public class CajaMango {
         this.numeroCalibre = numeroCalibre;
     }
 
-    public void setNumeroCajaPorPalet(int numeroCajaPorPalet) {
-        this.numeroCajaPorPalet = numeroCajaPorPalet;
+    public void setAtributosBaseCajaMango(AtributosBaseCajaMango atributosBaseCajaMango) {
+        this.atributosBaseCajaMango = atributosBaseCajaMango;
     }
 
-    public void setNumeroCajaPorContenedor(int numeroCajaPorContenedor) {
-        this.numeroCajaPorContenedor = numeroCajaPorContenedor;
-    }
-    
     @Override
     public String toString() {
-        return "\nMaterial: " + tipoMaterial
-                + "\nPeso: " + pesoCaja
+        return "\nPeso: " + atributosBaseCajaMango.getPesoCaja()
+                + (atributosBaseCajaMango.getNumeroCajaPorPalet() != 0 ? ("\nCajas por palet: " + atributosBaseCajaMango.getNumeroCajaPorPalet()) : "")
+                + (atributosBaseCajaMango.getNumeroCajaPorContenedor() != 0 ? ("\nCajas por Contenedor: " + atributosBaseCajaMango.getNumeroCajaPorContenedor()) : "")
+                + "\nMaterial: " + atributosBaseCajaMango.getTipoMaterial()
                 + "\nMarca: " + nombreMarca
                 + "\nCalibre: " + numeroCalibre
-                + (numeroCajaPorPalet != 0 ? ("\nCajas por palet: " + numeroCajaPorPalet) : "")
-                + (numeroCajaPorContenedor != 0 ? ("\nCajas por Contenedor: " + numeroCajaPorContenedor) : "");
+                + "\nVariedad: " + atributosBaseCajaMango.getVariedadProducto();
     }
-        
+
+    public String getPesoCaja() {
+        return Double.toString(atributosBaseCajaMango.getPesoCaja());
+    }
+
+    public String getNumeroCajaPorPalet() {
+        return Integer.toString(atributosBaseCajaMango.getNumeroCajaPorPalet());
+    }
+
+    public String getNumeroCajaPorContenedor() {
+        return Integer.toString(atributosBaseCajaMango.getNumeroCajaPorContenedor());
+    }
+
+    public String getTipoMaterial() {
+        return atributosBaseCajaMango.getTipoMaterial();
+    }
+
+    public String getNombreMarca() {
+        return nombreMarca;
+    }
+
+    public String getNumeroCalibre() {
+        return Integer.toString(numeroCalibre);
+    }
+
+    public String getVariedadProducto() {
+        return atributosBaseCajaMango.getVariedadProducto();
+    }
 }

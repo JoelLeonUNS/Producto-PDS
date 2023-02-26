@@ -1,42 +1,49 @@
 package cajas;
 
+import flyweightCajaJengibreOrganico.AtributosBaseCajaJengibreOrganico;
+
 public class CajaJengibreOrganico {
 
-    private String tipoMaterial = null;
-    private double pesoCaja = 0;
     private String nombreMarca = null;
-    private int numeroCajaPorPalet = 0;
-    private int numeroCajaPorContenedor = 0;
+    private AtributosBaseCajaJengibreOrganico atributosBaseCajaJengibreOrganico = null;
 
     public CajaJengibreOrganico() {
-    }
-
-    public void setTipoMaterial(String tipoMaterial) {
-        this.tipoMaterial = tipoMaterial;
-    }
-
-    public void setPesoCaja(double pesoCaja) {
-        this.pesoCaja = pesoCaja;
     }
 
     public void setNombreMarca(String nombreMarca) {
         this.nombreMarca = nombreMarca;
     }
 
-    public void setNumeroCajaPorPalet(int numeroCajaPorPalet) {
-        this.numeroCajaPorPalet = numeroCajaPorPalet;
-    }
-
-    public void setNumeroCajaPorContenedor(int numeroCajaPorContenedor) {
-        this.numeroCajaPorContenedor = numeroCajaPorContenedor;
+    public void setAtributosBaseCajaJengibreOrganico(AtributosBaseCajaJengibreOrganico atributosBaseCajaJengibreOrganico) {
+        this.atributosBaseCajaJengibreOrganico = atributosBaseCajaJengibreOrganico;
     }
 
     @Override
     public String toString() {
-        return "\nMaterial: " + tipoMaterial
-                + "\nPeso: " + pesoCaja
+        return "\nPeso: " + atributosBaseCajaJengibreOrganico.getPesoCaja()
+                + "\nMaterial: " + atributosBaseCajaJengibreOrganico.getTipoMaterial()
                 + "\nMarca: " + nombreMarca
-                + "\nCajas por palet: " + numeroCajaPorPalet
-                + "\nCajas por Contenedor: " + numeroCajaPorContenedor;
+                + "\nCajas por palet: " + atributosBaseCajaJengibreOrganico.getNumeroCajaPorPalet()
+                + "\nCajas por Contenedor: " + atributosBaseCajaJengibreOrganico.getNumeroCajaPorContenedor();
+    }
+
+    public String getPesoCaja() {
+        return Double.toString(atributosBaseCajaJengibreOrganico.getPesoCaja());
+    }
+
+    public String getNumeroCajaPorPalet() {
+        return Integer.toString(atributosBaseCajaJengibreOrganico.getNumeroCajaPorPalet());
+    }
+
+    public String getNumeroCajaPorContenedor() {
+        return Integer.toString(atributosBaseCajaJengibreOrganico.getNumeroCajaPorContenedor());
+    }
+
+    public String getTipoMaterial() {
+        return atributosBaseCajaJengibreOrganico.getTipoMaterial();
+    }
+
+    public String getNombreMarca() {
+        return nombreMarca;
     }
 }

@@ -3,14 +3,6 @@ package constructorCajaMango;
 public class MaritimoCajaMangoConstructor extends CajaMangoConstructor {
 
     @Override
-    public void construirTipoMaterial() {
-    }
-
-    @Override
-    public void construirPesoCaja() {
-    }
-
-    @Override
     public void construirNombreMarca() {
     }
 
@@ -19,19 +11,6 @@ public class MaritimoCajaMangoConstructor extends CajaMangoConstructor {
     }
 
     @Override
-    public void construirNumeroCajaPorPalet() {
+    public void construirAtributosBaseCajaMago() {
     }
-
-    @Override
-    public void construirNumeroCajaPorContenedor() {
-    }
-
-    @Override
-    public void putNombreMarcaInMap() {
-    }
-
-    @Override
-    public void putNumeroCalibreInMap() {
-    }
-
 }
